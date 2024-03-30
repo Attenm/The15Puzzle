@@ -1,0 +1,9 @@
+@import '../../mixins';
+@import '../../variables';
+
+.btn {
+    @include standardLayout;
+    @include standardButton;
+    line-height: $line-height-lg;
+    padding-inline: $padding-lg;
+}

@@ -1,0 +1,45 @@
+@import '../../variables';
+@import '../../mixins';
+
+.results {
+    &__container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: $gap-md;
+        padding: calc($padding-lg * 2);
+        padding-inline: calc($padding-lg * 4);
+        background-color: #fff;
+        @include standardLayout;
+        @include standardShadow;
+    }
+
+    &__title {
+        @include standardLayout;
+        text-transform: uppercase;
+        padding-inline: $padding-lg;
+        line-height: $line-height-lg;
+    }
+
+    &__info-type {
+        align-self: flex-start;
+    }
+
+    &__result-container {
+        display: flex;
+        flex-direction: column;
+        @include standardLayout;
+        padding: $padding-md;
+        padding-inline: $padding-lg;
+        gap: calc($gap-sm / 2);
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .results {
+        &__container {
+            gap: $gap-lg;
+            padding: $padding-md $padding-lg;
+        }
+    }
+}

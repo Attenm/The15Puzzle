@@ -1,0 +1,27 @@
+@import '../../variables';
+@import'../../mixins';
+
+.mode {
+
+    &-select {
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            gap: $gap-lg;
+        }
+
+        &__title {
+            @include standardLayout;
+            text-transform: uppercase;
+            line-height: $line-height-lg;
+            padding-inline: $padding-md;
+        }
+
+        &__button {
+            @include standardButton;
+            line-height: $line-height-lg;
+            padding-inline: $padding-md;
+        }
+    }
+}

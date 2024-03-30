@@ -1,0 +1,58 @@
+@import 'variables';
+@import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    background-image: $background-image-lg;
+}
+
+.App {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button, input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+}
+
+.btn-arrow-left{
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 20px;
+    height: 55px;
+    width: 55px;
+    background-image: url(../public/icons/arrowLeft.svg);
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    @include focused;
+}
+
+@media screen and (max-width: 780px) {
+    body {
+        background-image: $background-image-sm;
+        background-size: cover;
+        font-size: 24px;
+    }
+
+    .btn-arrow-left {
+        height: 45px;
+        width: 45px;
+    }
+}

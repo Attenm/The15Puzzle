@@ -1,0 +1,62 @@
+@import '../../variables';
+
+.board {
+    
+    &__container{
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, 10vmin);
+        grid-template-rows: repeat(4, 10vmin);
+        gap: $board-gap;
+        border-radius: 1vmin;
+    }
+
+    &__cell {
+        background-color: #444;
+        border-radius: 1vmin;
+    }
+
+    &__tile {
+        position: absolute;
+        top: calc($y * (10vmin + $board-gap));
+        left: calc($x * (10vmin + $board-gap));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10vmin;
+        height: 10vmin;
+        border-radius: 1vmin;
+        background-color: #969696;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .board {
+        &__container {
+            grid-template-columns: repeat(4, 15vmin);
+            grid-template-rows: repeat(4, 15vmin);
+        }
+        &__tile {
+            width: 15vmin;
+            height: 15vmin;
+            top: calc($y * (15vmin + $board-gap));
+            left: calc($x * (15vmin + $board-gap));
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    
+    .board {
+        &__container {
+            grid-template-columns: repeat(4, 20vmin);
+            grid-template-rows: repeat(4, 20vmin);
+        }
+        &__tile {
+            width: 20vmin;
+            height: 20vmin;
+            top: calc($y * (20vmin + $board-gap));
+            left: calc($x * (20vmin + $board-gap));
+        }
+    }
+}

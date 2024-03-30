@@ -1,0 +1,26 @@
+@mixin standardLayout {
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+@mixin standardShadow {
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+}
+
+@mixin standardButton {
+    @include standardLayout;
+    @include standardShadow;
+    cursor: pointer;
+
+    &:active {
+        box-shadow: 0px 0px 0px 0px;
+        transform: translate(4px, 4px);
+    }
+}
+
+@mixin focused {
+    &:focus {
+        animation: spring 0.5s ease-in-out;
+    }
+}

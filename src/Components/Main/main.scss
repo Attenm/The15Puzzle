@@ -1,0 +1,41 @@
+@import '../../variables';
+@import '../../mixins';
+
+.main {
+    &__container {
+        position: relative;
+        height: 75%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+    }   
+
+    &__header {
+        &-section {
+            display: flex;    
+        }
+    }
+
+    &__result {
+        &-section {
+            @include standardLayout;
+            padding: $padding-sm;
+        }
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .main {
+        &__container {
+            height: 90%;
+        }
+        &__result {
+            &-section {
+                background-color: transparent;
+                border-radius: 0;
+                border: none;
+            }
+        }
+    }
+}
