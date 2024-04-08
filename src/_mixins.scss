@@ -12,6 +12,7 @@
     @include standardLayout;
     @include standardShadow;
     cursor: pointer;
+    user-select: none;
 
     &:active {
         box-shadow: 0px 0px 0px 0px;
@@ -20,7 +21,8 @@
 }
 
 @mixin focused {
+    transition: transform 0.3s ease-in-out;
     &:focus {
-        animation: spring 0.5s ease-in-out;
+        transform: scale(1.2);  
     }
 }

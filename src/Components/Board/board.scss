@@ -2,45 +2,47 @@
 
 .board {
     
-    &__container{
+    &__container {
+        --grid-size: 4;
+        background-color: #7a7a7a6f;
         position: relative;
         display: grid;
-        grid-template-columns: repeat(4, 10vmin);
-        grid-template-rows: repeat(4, 10vmin);
+        grid-template-columns: repeat(var(--grid-size), 11vmin);
+        grid-template-rows: repeat(var(--grid-size), 11vmin);
         gap: $board-gap;
         border-radius: 1vmin;
     }
 
-    &__cell {
-        background-color: #444;
-        border-radius: 1vmin;
-    }
-
     &__tile {
+        --x: 1;
+        --y: 2;
+        user-select: none;
+        cursor: pointer;
         position: absolute;
-        top: calc($y * (10vmin + $board-gap));
-        left: calc($x * (10vmin + $board-gap));
+        top: calc(var(--y) * (11vmin + $board-gap));
+        left: calc(var(--x) * (11vmin + $board-gap));
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 10vmin;
-        height: 10vmin;
+        width: 11vmin;
+        height: 11vmin;
         border-radius: 1vmin;
-        background-color: #969696;
+        border: 2px solid #000000;
+        background-color: #ffffff;
     }
 }
 
 @media screen and (max-width: 780px) {
     .board {
         &__container {
-            grid-template-columns: repeat(4, 15vmin);
-            grid-template-rows: repeat(4, 15vmin);
+            grid-template-columns: repeat(var(--grid-size), 15vmin);
+            grid-template-rows: repeat(var(--grid-size), 15vmin);
         }
         &__tile {
             width: 15vmin;
             height: 15vmin;
-            top: calc($y * (15vmin + $board-gap));
-            left: calc($x * (15vmin + $board-gap));
+            top: calc(var(--y) * (15vmin + $board-gap));
+            left: calc(var(--x) * (15vmin + $board-gap));
         }
     }
 }
@@ -49,14 +51,14 @@
     
     .board {
         &__container {
-            grid-template-columns: repeat(4, 20vmin);
-            grid-template-rows: repeat(4, 20vmin);
+            grid-template-columns: repeat(var(--grid-size), 20vmin);
+            grid-template-rows: repeat(var(--grid-size), 20vmin);
         }
         &__tile {
             width: 20vmin;
             height: 20vmin;
-            top: calc($y * (20vmin + $board-gap));
-            left: calc($x * (20vmin + $board-gap));
+            top: calc(var(--y) * (20vmin + $board-gap));
+            left: calc(var(--x) * (20vmin + $board-gap));
         }
     }
 }

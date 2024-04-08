@@ -3,6 +3,7 @@
 
 .main {
     &__container {
+        min-width: 45vmin;
         position: relative;
         height: 75%;
         display: flex;

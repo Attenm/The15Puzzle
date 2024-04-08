@@ -32,7 +32,7 @@ button, input {
 .btn-arrow-left{
     position: absolute;
     display: block;
-    left: 0;
+    left: -10px;
     top: 20px;
     height: 55px;
     width: 55px;
@@ -40,8 +40,7 @@ button, input {
     background-size: cover;
     background-color: transparent;
     border: none;
-    outline: none;
-    @include focused;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 780px) {
@@ -54,5 +53,6 @@ button, input {
     .btn-arrow-left {
         height: 45px;
         width: 45px;
+        left: -50px;
     }
 }
